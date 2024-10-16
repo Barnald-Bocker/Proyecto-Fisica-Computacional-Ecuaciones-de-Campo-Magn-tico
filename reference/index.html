@@ -559,7 +559,9 @@
 
             <details class="quote">
               <summary>Source code in <code>src/Capacitor.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">181</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
 <span class="normal">182</span>
 <span class="normal">183</span>
 <span class="normal">184</span>
@@ -614,9 +616,7 @@
 <span class="normal">233</span>
 <span class="normal">234</span>
 <span class="normal">235</span>
-<span class="normal">236</span>
-<span class="normal">237</span>
-<span class="normal">238</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">SOR</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">tol</span><span class="p">):</span>
+<span class="normal">236</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">SOR</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">tol</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Esta es la función que resuelve la ecuación diferencial parcial de Laplace de manera iterativa. El método de relajación de Jacobi es la base para los métodos que se van a utilizar en este proyecto. Usa una discretización de la ecuación diferencial parcial para iterar por la grilla sucesivamente y definir el valor de un punto en específico con base en los puntos que se encuentran alrededor. Una particularidad de los métodos de Jacobi es que calcula los valores y los guarda en una matriz diferente a la que se obtienen estos valores. Este método no es estable para grillas cuadradas</span>
 
@@ -1205,41 +1205,13 @@
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>V1</code></td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Segundo argumento, es el voltaje que corresponde a la primera placa del capacitor.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>V2</code></td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Tercer argumento, es el voltaje que corresponde a la segunda placa del capacitor.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
             <td><code>factor</code></td>
             <td>
                   <code>int</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Cuarto argumento, es el factor de escala para obtener una grilla más detallada. Tiene que ser un entero.</p>
+                <p>Segundo argumento, es el factor de escala para obtener una grilla más detallada. Tiene que ser un entero.</p>
               </div>
             </td>
             <td>
@@ -1253,7 +1225,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Quinto argumento, es la tolerancia aceptada para la precisión del problema, se obtiene obteniendo la diferencia máxima entre phi y phi_copy</p>
+                <p>Tercer argumento, es la tolerancia aceptada para la precisión del problema, se obtiene obteniendo la diferencia máxima entre phi y phi_copy</p>
               </div>
             </td>
             <td>
@@ -1362,9 +1334,7 @@
 <span class="normal">174</span>
 <span class="normal">175</span>
 <span class="normal">176</span>
-<span class="normal">177</span>
-<span class="normal">178</span>
-<span class="normal">179</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">jacobi_relaxation</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">tol</span><span class="p">):</span>
+<span class="normal">177</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">jacobi_relaxation</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">tol</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Esta es la función que resuelve la ecuación diferencial parcial de Laplace de manera iterativa. El método de relajación de Jacobi es la base para los métodos que se van a utilizar en este proyecto. Usa una discretización de la ecuación diferencial parcial para iterar por la grilla sucesivamente y definir el valor de un punto en específico con base en los puntos que se encuentran alrededor. Una particularidad de los métodos de Jacobi es que calcula los valores y los guarda en una matriz diferente a la que se obtienen estos valores. Este método no siempre es estable.</span>
 
@@ -1391,10 +1361,8 @@
 
 <span class="sd">    Args:</span>
 <span class="sd">        phi (Numpy array): Primer argumento, la grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10*factor, 10*factor+1) para modelar el capacitor.</span>
-<span class="sd">        V1 (float): Segundo argumento, es el voltaje que corresponde a la primera placa del capacitor.</span>
-<span class="sd">        V2 (float): Tercer argumento, es el voltaje que corresponde a la segunda placa del capacitor.</span>
-<span class="sd">        factor (int): Cuarto argumento, es el factor de escala para obtener una grilla más detallada. Tiene que ser un entero.</span>
-<span class="sd">        tol (float): Quinto argumento, es la tolerancia aceptada para la precisión del problema, se obtiene obteniendo la diferencia máxima entre phi y phi_copy</span>
+<span class="sd">        factor (int): Segundo argumento, es el factor de escala para obtener una grilla más detallada. Tiene que ser un entero.</span>
+<span class="sd">        tol (float): Tercer argumento, es la tolerancia aceptada para la precisión del problema, se obtiene obteniendo la diferencia máxima entre phi y phi_copy</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        phi (Numpy array): La grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10*factor, 10*factor+1) para modelar el capacitor.</span>
