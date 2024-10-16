@@ -37,7 +37,7 @@ def grid_generator(factor = 1, V1 = 1.0, V2 = -1.0, boundary = 0.0):
         phi (Numpy array): La grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10*factor, 10*factor+1) para modelar el capacitor. El +1 en las columnas es debido a que una grilla que tiene una cantidad M de divisiones, contiene M+1 puntos.
     """
     # Crea el numpy array lleno de ceros para empezar a trabajar el problema.
-    # Se agregar el "dtype = float" para guardar los espacios con números flotantes desde un principio.
+    # Se debe agregar el "dtype = float" para guardar los espacios con números flotantes desde un principio.
     # factor tiene que ser un int, o si no va a tirar error
     factor = int(factor)
     phi = np.zeros((10*factor,10*factor+1), dtype = float)
@@ -104,6 +104,8 @@ def gauss_seidel(phi, omega, factor, tol):
         delta = np.max(np.abs(phi - phi_copy))
         # Se copian los valores de la nueva iteración, para seguir aplicando el delta y mejorar la precisión
         phi_copy = phi.copy()
+        # Actualiza el contador de iteraciones
+        its += 1
     # En el momento que se cumple la condición en la que delta <= tol, se rompe el ciclo y se devuelve la matriz con la solución phi y las iteraciones que fueron requeridas para llegar a la tolerancia mencionada
     # Por naturaleza de python, se devuelve en forma de tupla
     return phi, its
@@ -170,6 +172,8 @@ def jacobi_relaxation(phi, factor, tol):
         phi = phi_prime
         # El nuevo phi_prime es el phi viejo
         phi_prime = temp
+        # Actualiza el contador de iteraciones
+        its += 1
     # En el momento que se cumple la condición en la que delta <= tol, se rompe el ciclo y se devuelve la matriz con la solución phi (en este caso sería la matriz phi_prime) y las iteraciones que fueron requeridas para llegar a la tolerancia mencionada
     # Por naturaleza de python, se devuelve en forma de tupla
     return phi_prime, its
@@ -227,6 +231,8 @@ def SOR(phi, factor, omega, tol):
         phi = phi_prime
         # El nuevo phi_prime es el phi viejo
         phi_prime = temp
+        # Actualiza el contador de iteraciones
+        its += 1
     # En el momento que se cumple la condición en la que delta <= tol, se rompe el ciclo y se devuelve la matriz con la solución phi (en este caso sería la matriz phi_prime) y las iteraciones que fueron requeridas para llegar a la tolerancia mencionada
     # Por naturaleza de python, se devuelve en forma de tupla
     return phi_prime, its
@@ -237,7 +243,13 @@ tol = 1e-5
 boundary = 0.0
 omega = 0.9
 main_grid = grid_generator(factor, V1, V2, boundary)
-result, iterations = SOR(main_grid, factor, omega, tol)
-plt.imshow(result, cmap = "gray")
+jacobi_vals, iterations = jacobi_relaxation(main_grid, factor, tol)
+plt.imshow(jacobi_vals, cmap = "gray")
 plt.tight_layout()
+plt.title(f"Método de Jacobi. Iteraciones requeridas: {iterations}")
+plt.show()
+gauss_vals, iterations = gauss_seidel(main_grid, omega, factor, tol)
+plt.imshow(gauss_vals, cmap = "gray")
+plt.tight_layout()
+plt.title(f"Método de Gauss Seidel. Iteraciones requeridas: {iterations} \n Omega = {omega}")
 plt.show()
