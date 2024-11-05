@@ -137,10 +137,8 @@ def jacobi_relaxation(phi, factor, tol):
 
     Args:
         phi (Numpy array): Primer argumento, la grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10*factor, 10*factor+1) para modelar el capacitor.
-        V1 (float): Segundo argumento, es el voltaje que corresponde a la primera placa del capacitor.
-        V2 (float): Tercer argumento, es el voltaje que corresponde a la segunda placa del capacitor.
-        factor (int): Cuarto argumento, es el factor de escala para obtener una grilla más detallada. Tiene que ser un entero.
-        tol (float): Quinto argumento, es la tolerancia aceptada para la precisión del problema, se obtiene obteniendo la diferencia máxima entre phi y phi_copy
+        factor (int): Segundo argumento, es el factor de escala para obtener una grilla más detallada. Tiene que ser un entero.
+        tol (float): Tercer argumento, es la tolerancia aceptada para la precisión del problema, se obtiene obteniendo la diferencia máxima entre phi y phi_copy
 
     Returns:
         phi (Numpy array): La grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10*factor, 10*factor+1) para modelar el capacitor.
