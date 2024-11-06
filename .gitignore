@@ -1,0 +1,5 @@
+#Ignorar todos los archivos ./a.out
+./a.out
+
+#Ignorar todos los .png
+*.png
