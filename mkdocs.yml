@@ -16,5 +16,7 @@ nav:
   - Reference: reference.md
   - Tutorial: tutorials.md
 
+site_url: https://Barnald-Bocker.github.io/Proyecto-Fisica-Computacional-Ecuaciones-de-Campo-Magnetico
+
 plugins:  
   - mkdocstrings
