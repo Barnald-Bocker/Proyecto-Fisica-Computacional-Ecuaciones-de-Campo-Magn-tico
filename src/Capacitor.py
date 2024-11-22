@@ -5,6 +5,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
+import time
 
 def grid_generator(factor = 1, V1 = 1.0, V2 = -1.0, boundary = 0.0):
     """
@@ -234,20 +235,25 @@ def SOR(phi, factor, omega, tol):
     # En el momento que se cumple la condición en la que delta <= tol, se rompe el ciclo y se devuelve la matriz con la solución phi (en este caso sería la matriz phi_prime) y las iteraciones que fueron requeridas para llegar a la tolerancia mencionada
     # Por naturaleza de python, se devuelve en forma de tupla
     return phi_prime, its
-factor = 10
+
+start = time.time()
+factor = 50
 V1 = 1.0
 V2 = -1.0
-tol = 1e-5
+tol = 1e-4
 boundary = 0.0
 omega = 0.9
 main_grid = grid_generator(factor, V1, V2, boundary)
-jacobi_vals, iterations = jacobi_relaxation(main_grid, factor, tol)
-plt.imshow(jacobi_vals, cmap = "gray")
-plt.tight_layout()
-plt.title(f"Método de Jacobi. Iteraciones requeridas: {iterations}")
-plt.show()
+#jacobi_vals, iterations = jacobi_relaxation(main_grid, factor, tol)
+#plt.imshow(jacobi_vals, cmap = "gray")
+#plt.tight_layout()
+#plt.title(f"Método de Jacobi. Iteraciones requeridas: {iterations}")
+#plt.show()
 gauss_vals, iterations = gauss_seidel(main_grid, omega, factor, tol)
+end = time.time()
+print(end - start)
 plt.imshow(gauss_vals, cmap = "gray")
 plt.tight_layout()
 plt.title(f"Método de Gauss Seidel. Iteraciones requeridas: {iterations} \n Omega = {omega}")
 plt.show()
+
