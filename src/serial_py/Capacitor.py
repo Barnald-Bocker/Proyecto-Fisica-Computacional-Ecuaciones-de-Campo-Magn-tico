@@ -237,7 +237,7 @@ def SOR(phi, factor, omega, tol):
     return phi_prime, its
 
 start = time.time()
-factor = 50
+factor = 10
 V1 = 1.0
 V2 = -1.0
 tol = 1e-4

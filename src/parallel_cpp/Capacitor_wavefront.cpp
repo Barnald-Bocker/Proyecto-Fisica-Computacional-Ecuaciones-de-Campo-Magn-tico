@@ -149,7 +149,7 @@ void print_grid(std::vector<double> &matrix, int factor){
   }
 }
 int main(){
-  int factor = 75;
+  int factor = 50;
   double volt1 = 1.0;
   double volt2 = -1.0;
   std::vector<double> grid = grid_generator(factor, volt1, volt2);
