@@ -50,9 +50,9 @@ El metodo de sobrerelajacion de Jacobi forma parte de los metodos de relajacion 
 A nivel de matematicas se tiene que considerar el siguiente vector el cual se va a llamar el vector residuo $r = b- A\bar{x}$ siendo $\bar{x}$ una aproximacion a la solucion del problema a resolver de forma $Ax = b$. Para cada iteracion de procesos como Jacobi se da una aproximacion a la solucion por cada iteracion y por lo tanto un vector residual. El objetivo es que este vector residual converga a 0 de manera rapida al usar el parametro $\omega$. 
 De este parametro dependera la convergencia del metodo. $\omega$ se escoge dependiendo del problema a resolver. 
 
-si $ 0 < \omega < 1$ se le conoce como under-relaxation.
+si $0 < \omega < 1$ se le conoce como under-relaxation.
  
-si $ 1 < \omega$ se le conoce como over-relaxation.
+si $1 < \omega$ se le conoce como over-relaxation.
 
 Si se hace buen uso de este metodo, la convergencia se logra de buena manera, sin embargo este metodo no siempre logra ser convergente, esto puede ser tanto por la escogencia del parametro $\omega$ o por la naturaleza del problema en si.    
 
