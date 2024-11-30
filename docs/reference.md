@@ -2,4 +2,4 @@
 
 Esta página incluye todas las funciones creadas para el desarrollo de este proyceto
 
-::: src.Capacitor
+::: src.serial_py.Capacitor
