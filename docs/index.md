@@ -1,17 +1,17 @@
-# Welcome to MkDocs
+# Modelo sencillo de un capacitor y su solución numérica
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Se desea encontrar el potencial electroestático para una placa cuadrada de 10cm x 10cm  que modela de forma ideal un capacitor electrónico $\phi = \phi (x,y)$. Este problema responde a la ecuación de Laplace en dos dimensiones
+\begin{equation}
+ \frac{\partial^{2}\phi}{\partial{x^{2}}} + \frac{\partial^{2}\phi}{\partial{y^{2}}} = 0 
+\end{equation}
+<div style="text-align: center;">
+    <img src="images/Grilla.png" alt="Modelo de capacitor">
+</div>
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Los metodos numéricos a usar son los siguientes
+<ul style="list-style-type: square;">
+  <li>Relajación de Jacobi</li>
+  <li>Sobrerelajación de Jacobi (SOR)</li>
+  <li>Gauss-Seidel</li>
+</ul>
+Asimismo se estará aplicando la paralelización por memoria compartida a través del método de wavefront (diagonal)
