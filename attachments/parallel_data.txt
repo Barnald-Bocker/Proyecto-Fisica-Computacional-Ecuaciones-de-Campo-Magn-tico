@@ -1,0 +1,60 @@
+Delta máximo final: 9.99756e-05
+Número de procesos: 1
+Tiempo transcurrido: 3822.06
+Delta máximo final: 9.99756e-05
+Número de procesos: 2
+Tiempo transcurrido: 2260.57
+Delta máximo final: 9.99756e-05
+Número de procesos: 3
+Tiempo transcurrido: 1644.33
+Delta máximo final: 9.99756e-05
+Número de procesos: 4
+Tiempo transcurrido: 1444.45
+Delta máximo final: 9.99756e-05
+Número de procesos: 5
+Tiempo transcurrido: 1283.71
+Delta máximo final: 9.99756e-05
+Número de procesos: 6
+Tiempo transcurrido: 1164.49
+Delta máximo final: 9.99756e-05
+Número de procesos: 7
+Tiempo transcurrido: 1134.46
+Delta máximo final: 9.99756e-05
+Número de procesos: 8
+Tiempo transcurrido: 1066.96
+Delta máximo final: 9.99756e-05
+Número de procesos: 9
+Tiempo transcurrido: 1056.06
+Delta máximo final: 9.99756e-05
+Número de procesos: 10
+Tiempo transcurrido: 999.997
+Delta máximo final: 9.99756e-05
+Número de procesos: 11
+Tiempo transcurrido: 1012.94
+Delta máximo final: 9.99756e-05
+Número de procesos: 12
+Tiempo transcurrido: 995.934
+Delta máximo final: 9.99756e-05
+Número de procesos: 13
+Tiempo transcurrido: 986.795
+Delta máximo final: 9.99756e-05
+Número de procesos: 14
+Tiempo transcurrido: 948.316
+Delta máximo final: 9.99756e-05
+Número de procesos: 15
+Tiempo transcurrido: 943.264
+Delta máximo final: 9.99756e-05
+Número de procesos: 16
+Tiempo transcurrido: 924.798
+Delta máximo final: 9.99756e-05
+Número de procesos: 17
+Tiempo transcurrido: 941.351
+Delta máximo final: 9.99756e-05
+Número de procesos: 18
+Tiempo transcurrido: 906.128
+Delta máximo final: 9.99756e-05
+Número de procesos: 19
+Tiempo transcurrido: 937.471
+Delta máximo final: 9.99756e-05
+Número de procesos: 20
+Tiempo transcurrido: 901.318
