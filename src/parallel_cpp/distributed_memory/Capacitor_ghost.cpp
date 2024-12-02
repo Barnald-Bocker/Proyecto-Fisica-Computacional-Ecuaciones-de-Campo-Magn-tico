@@ -3,7 +3,7 @@
 #include <cmath>
 #include <mpi.h>
 
-int gauss_seidel(double V1, double V2, double omega, int factor, double tolerance){
+std::vector<double> gauss_seidel(double V1, double V2, double omega, int factor, double tolerance){
 
 
 	if(tolerance <= 0){
@@ -17,14 +17,13 @@ int gauss_seidel(double V1, double V2, double omega, int factor, double toleranc
 	int column = 10*factor+1;
   int size, rank;
   int row = 10*factor;
-  double time_1 = MPI_Wtime();
   MPI_Init(NULL, NULL);
+  double time_1 = MPI_Wtime();
   MPI_Comm_size(MPI_COMM_WORLD, &size);
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
   
   int nlocal = row/size;
   int rest = row%size;
-  
   if (rest && rank<rest){
     nlocal ++;
   }
@@ -33,7 +32,6 @@ int gauss_seidel(double V1, double V2, double omega, int factor, double toleranc
   if (rest && rest <= rank){
     start += rest;
   }
-  
   //int end = start +  nlocal;
   int end = nlocal+1;
  
@@ -149,10 +147,28 @@ int gauss_seidel(double V1, double V2, double omega, int factor, double toleranc
     its += 1;
   }
   //std::cout << delta << std::endl;
-  
-  double time_2 = MPI_Wtime();
-  MPI_Finalize(); 
-  return its;
+  switch(rank){
+    case 0:
+      {
+      std::vector<double> grid(10*factor*(10*factor+1));
+      int displacements[size];
+      int counts[size];
+      displacements[0] = 0; 
+      for (int i=1; i<size-1;i++){
+        displacements[i] =((row/size) + rest*( (i<(row%size)) ? 1 : 0))*i + rest*( (rest <= i) ? 1:0 );
+        counts[size] = ((row/size) + rest*( (i<(row%size)) ? 1 : 0))*column;
+      }
+      MPI_Gatherv(&local_section,nlocal*column, MPI_DOUBLE, &grid, counts, displacements, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+      double time_2 = MPI_Wtime();
+      MPI_Finalize(); 
+      //std::cout << "Numero de iteraciones: " << its << std::endl;
+      return grid;
+      break;
+      }
+    default:
+      MPI_Gatherv(&local_section, nlocal*column, MPI_INT, NULL, NULL, NULL, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+      break;
+  }
 }
 
 void print_grid(std::vector<double> &matrix, int factor){
@@ -174,5 +190,6 @@ int main(){
   double volt2 = -1.0;
   double omega = 0.9;
   double tolerance = 1e-4;
-  int iterations = gauss_seidel(volt1,volt2,omega, factor, tolerance);
+  std::vector<double> grid = gauss_seidel(volt1,volt2,omega, factor, tolerance);
+  print_grid(grid,factor);
 }
