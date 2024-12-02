@@ -14,4 +14,4 @@ Los metodos numéricos a usar son los siguientes
   <li>Sobrerelajación de Jacobi (SOR)</li>
   <li>Gauss-Seidel</li>
 </ul>
-Asimismo se estará aplicando la paralelización por memoria compartida a través del método de wavefront (diagonal)
+Asimismo se estará aplicando la paralelización por memoria compartida a través del método de wavefront (diagonal).
