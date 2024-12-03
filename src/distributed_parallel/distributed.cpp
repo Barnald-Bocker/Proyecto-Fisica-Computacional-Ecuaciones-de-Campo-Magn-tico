@@ -146,7 +146,8 @@ void gauss_seidel(double V1, double V2, double omega, int factor, double toleran
   MPI_Request print_request;
   int signal = 1;
   if(rank == 0){
-    // std::cout << "Resultado final después de " << its << " iteraciones, transcurridos " << time_2 - time_1 << " segundos:" << std::endl;
+    std::cout << "Número de procesos: " << size << std::endl;
+    std::cout << "Tiempo transcurrido: " << time_2 - time_1 << std::endl;
     for(int i = 0; i < end; i++){
       for(int j = 0; j < column; j++){
 	if(j < column - 1){
@@ -193,7 +194,7 @@ void gauss_seidel(double V1, double V2, double omega, int factor, double toleran
 }
 
 int main(){
-  int factor = 1;
+  int factor = 10;
   double volt1 = 1.0;
   double volt2 = -1.0;
   double omega = 0.8;
