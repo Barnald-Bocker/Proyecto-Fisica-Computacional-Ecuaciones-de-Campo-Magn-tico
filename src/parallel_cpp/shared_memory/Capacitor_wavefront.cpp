@@ -101,7 +101,7 @@ int gauss_seidel(std::vector<double>& phi, double omega, int factor, double tole
 		{
 		for(int j=2; j < 10*factor; ++j){
 			// Se paraleliza el recorrido para cada línea diagonal.
-			#pragma omp for
+			#pragma omp for schedule(dynamic)
 			for(int d=0; d < 10*factor-j; ++d){
 			// Nótese que, nuevamente, las entradas de la grilla corresponden a '[i-d,j+d]'.
 			// Para el segundo ciclo, i->initValue. Por lo tanto: '[initValue-d,j+d]'.
