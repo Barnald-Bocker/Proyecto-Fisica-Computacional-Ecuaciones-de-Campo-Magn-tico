@@ -1,10 +1,8 @@
 #!/bin/bash
 
-g++ -fopenmp Capacitor_ghost.cpp
-for i in {1..8}
-do
-  export OMP_NUM_THREADS=$i
-  ./a.out | head -n 2
-done
-#./a.out | tail -n 100 > capacitor.csv
-#python3 plot.py
+mpicxx Capacitor.cpp
+
+#mpirun -np 2 a.out | head -n 2
+
+mpirun -np 2 a.out | tail -n +3 > capacitor.csv
+python3 plot.py
