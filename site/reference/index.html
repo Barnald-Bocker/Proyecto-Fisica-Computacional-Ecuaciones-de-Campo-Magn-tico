@@ -1,0 +1,1450 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://Barnald-Bocker.github.io/Proyecto-Fisica-Computacional-Ecuaciones-de-Campo-Magnetico/reference/">
+      
+      
+        <link rel="prev" href="../explanation/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+    
+    
+      
+        <title>Reference - Proyecto Física Computacional, Modelo de un capacitor</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#funciones-creadas-para-resolver-el-problema" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Proyecto Física Computacional, Modelo de un capacitor" class="md-header__button md-logo" aria-label="Proyecto Física Computacional, Modelo de un capacitor" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Proyecto Física Computacional, Modelo de un capacitor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Proyecto Física Computacional, Modelo de un capacitor" class="md-nav__button md-logo" aria-label="Proyecto Física Computacional, Modelo de un capacitor" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Proyecto Física Computacional, Modelo de un capacitor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Explanation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#src.serial_py.Capacitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capacitor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.serial_py.Capacitor.SOR" class="md-nav__link">
+    <span class="md-ellipsis">
+      SOR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.serial_py.Capacitor.gauss_seidel" class="md-nav__link">
+    <span class="md-ellipsis">
+      gauss_seidel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.serial_py.Capacitor.grid_generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      grid_generator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.serial_py.Capacitor.jacobi_relaxation" class="md-nav__link">
+    <span class="md-ellipsis">
+      jacobi_relaxation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#src.serial_py.Capacitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capacitor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.serial_py.Capacitor.SOR" class="md-nav__link">
+    <span class="md-ellipsis">
+      SOR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.serial_py.Capacitor.gauss_seidel" class="md-nav__link">
+    <span class="md-ellipsis">
+      gauss_seidel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.serial_py.Capacitor.grid_generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      grid_generator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.serial_py.Capacitor.jacobi_relaxation" class="md-nav__link">
+    <span class="md-ellipsis">
+      jacobi_relaxation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="funciones-creadas-para-resolver-el-problema">Funciones creadas para resolver el problema</h1>
+<p>Esta página incluye todas las funciones creadas para el desarrollo de este proyceto</p>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="src.serial_py.Capacitor"></a>
+    <div class="doc doc-contents first">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="src.serial_py.Capacitor.SOR" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">SOR</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">tol</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Esta es la función que resuelve la ecuación diferencial parcial de Laplace de manera iterativa. El método de relajación de Jacobi es la base para los métodos que se van a utilizar en este proyecto. Usa una discretización de la ecuación diferencial parcial para iterar por la grilla sucesivamente y definir el valor de un punto en específico con base en los puntos que se encuentran alrededor. Una particularidad de los métodos de Jacobi es que calcula los valores y los guarda en una matriz diferente a la que se obtienen estos valores. Este método no es estable para grillas cuadradas</p>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">V1</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">V2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">omega</span> <span class="o">=</span> <span class="mf">0.9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">phi</span> <span class="o">=</span> <span class="n">grid_generator</span><span class="p">(</span><span class="n">factor</span><span class="p">,</span> <span class="n">V1</span><span class="p">,</span> <span class="n">V2</span><span class="p">,</span> <span class="n">boundary</span><span class="p">)</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="n">SOR</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span>  <span class="n">tol</span> <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">    RuntimeWarning: overflow encountered in scalar multiply</span>
+<span class="go">    RuntimeWarning: overflow encountered in scalar add</span>
+</code></pre></div>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>phi</code></td>
+            <td>
+                  <code>Numpy array</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Primer argumento, la grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10<em>factor, 10</em>factor+1) para modelar el capacitor.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>factor</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Segundo argumento, es el factor de escala para obtener una grilla más detallada. Tiene que ser un entero.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>omega</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Tercer argumento, parámetro que depende del problema, dependiendo de su escogencia puede acelerar el cálculo.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>tol</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Cuarto argumento, es la tolerancia aceptada para la precisión del problema, se obtiene obteniendo la diferencia máxima entre phi y phi_copy</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>phi</code></td>            <td>
+                  <code>Numpy array</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>La grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10<em>factor, 10</em>factor+1) para modelar el capacitor.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+<td><code>its</code></td>            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Iteraciones que fueron necesarias para llegar a la tolerancia especificada.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src/serial_py/Capacitor.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">SOR</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">tol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Esta es la función que resuelve la ecuación diferencial parcial de Laplace de manera iterativa. El método de relajación de Jacobi es la base para los métodos que se van a utilizar en este proyecto. Usa una discretización de la ecuación diferencial parcial para iterar por la grilla sucesivamente y definir el valor de un punto en específico con base en los puntos que se encuentran alrededor. Una particularidad de los métodos de Jacobi es que calcula los valores y los guarda en una matriz diferente a la que se obtienen estos valores. Este método no es estable para grillas cuadradas</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; factor = 1</span>
+<span class="sd">        &gt;&gt;&gt; V1 = 1.0</span>
+<span class="sd">        &gt;&gt;&gt; V2 = -1.0</span>
+<span class="sd">        &gt;&gt;&gt; omega = 0.9</span>
+<span class="sd">        &gt;&gt;&gt; tol = 1e-5</span>
+<span class="sd">        &gt;&gt;&gt; phi = grid_generator(factor, V1, V2, boundary)</span>
+
+<span class="sd">        &gt;&gt;&gt; result, iterations = SOR(phi, factor, omega,  tol )</span>
+<span class="sd">        &gt;&gt;&gt; print(result)</span>
+<span class="sd">            RuntimeWarning: overflow encountered in scalar multiply</span>
+<span class="sd">            RuntimeWarning: overflow encountered in scalar add</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        phi (Numpy array): Primer argumento, la grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10*factor, 10*factor+1) para modelar el capacitor.</span>
+<span class="sd">        factor (int): Segundo argumento, es el factor de escala para obtener una grilla más detallada. Tiene que ser un entero.</span>
+<span class="sd">        omega (float): Tercer argumento, parámetro que depende del problema, dependiendo de su escogencia puede acelerar el cálculo.</span>
+<span class="sd">        tol (float): Cuarto argumento, es la tolerancia aceptada para la precisión del problema, se obtiene obteniendo la diferencia máxima entre phi y phi_copy</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        phi (Numpy array): La grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10*factor, 10*factor+1) para modelar el capacitor.</span>
+<span class="sd">        its (int): Iteraciones que fueron necesarias para llegar a la tolerancia especificada.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Se asegura que factor sea un int</span>
+    <span class="n">factor</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span>
+    <span class="c1"># Se crea la copia para guardar los valores que se van obteniendo, esta tiene que tener el mismo formato que phi</span>
+    <span class="n">phi_prime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="c1">#grid_generator(factor, V1, V2, boundary)</span>
+    <span class="c1"># Desarrollo del método Gauss-Seidel</span>
+    <span class="c1"># Se inicializa la variable que se usa para el condicional</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="c1"># Se inicializa el contador de iteraciones</span>
+    <span class="n">its</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># La escogencia de los parámetros de este for loop tienen un razonamiento. Se puede notar que la matriz especificada tiene tamaño (10*factor, 10*factor+1). Al empezar el for loop en 1 y terminarlo en el tamaño-1 (10*factor-1, 10*factor respectivamente) se evitan las condiciones de frontera que se encuentran en los límites de estas matrices, que serían la primer y última fila y columna, de esta forma se evita el uso de un condicional dentro del ciclo</span>
+    <span class="k">while</span> <span class="n">delta</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">factor</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">factor</span><span class="p">):</span>
+                <span class="c1"># Condicional que evita las condiciones de frontera</span>
+                <span class="k">if</span> <span class="mi">2</span><span class="o">*</span><span class="n">factor</span> <span class="o">&lt;=</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="o">*</span><span class="n">factor</span> <span class="ow">and</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">2</span><span class="o">*</span><span class="n">factor</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">8</span><span class="o">*</span><span class="n">factor</span><span class="p">):</span>
+                    <span class="k">pass</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># Para cualquier otro caso que no sean las condiciones de frontera, se evalua el algoritmo</span>
+                    <span class="n">phi_prime</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="o">+</span><span class="n">omega</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span><span class="o">*</span><span class="mf">0.25</span> <span class="o">-</span> <span class="n">omega</span><span class="o">*</span><span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>
+        <span class="c1"># Se calcula la diferencia máxima con respecto a los valores que se obtuvieron en la iteración anterior</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">phi</span> <span class="o">-</span> <span class="n">phi_prime</span><span class="p">))</span>
+        <span class="c1"># Se intercambian ambas grillas para que se siga aplicando el método, para seguir aplicando el delta y mejorar la precisión</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">phi</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">phi_prime</span>
+        <span class="c1"># El nuevo phi_prime es el phi viejo</span>
+        <span class="n">phi_prime</span> <span class="o">=</span> <span class="n">temp</span>
+        <span class="c1"># Actualiza el contador de iteraciones</span>
+        <span class="n">its</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># En el momento que se cumple la condición en la que delta &lt;= tol, se rompe el ciclo y se devuelve la matriz con la solución phi (en este caso sería la matriz phi_prime) y las iteraciones que fueron requeridas para llegar a la tolerancia mencionada</span>
+    <span class="c1"># Por naturaleza de python, se devuelve en forma de tupla</span>
+    <span class="k">return</span> <span class="n">phi_prime</span><span class="p">,</span> <span class="n">its</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="src.serial_py.Capacitor.gauss_seidel" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">gauss_seidel</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">tol</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Esta es la función que resuelve la ecuación diferencial parcial de Laplace de manera iterativa. En este caso la solución se guarda y se trabaja sobre la misma matriz, lo que es la principal diferencia de los métodos de Jacobi (modificado y simple). Una propiedad que es sumamente importante, es que siempre es estable.</p>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">V1</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">V2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">omega</span> <span class="o">=</span> <span class="mf">0.9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-5</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="n">gauss_seidel</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1e-5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go"> [[ 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00]</span>
+<span class="go">  [ 0.00000000e+00  1.94984598e-01  3.61769011e-01  2.52087439e-01 1.21533562e-01 -1.41308295e-06 -1.21531760e-01 -2.52085676e-01 -3.61767842e-01 -1.94984609e-01  0.00000000e+00]</span>
+<span class="go">  [ 0.00000000e+00  4.18168790e-01  1.00000000e+00  5.25040044e-01  2.34042744e-01  1.03625792e-06 -2.34042966e-01 -5.25038493e-01 -1.00000000e+00 -4.18167388e-01  0.00000000e+00]</span>
+<span class="go">  [ 0.00000000e+00  4.77685703e-01  1.00000000e+00  6.14026208e-01  2.89605985e-01 -5.83595094e-08 -2.89606016e-01 -6.14026132e-01 -1.00000000e+00 -4.77681031e-01  0.00000000e+00]</span>
+<span class="go">  [ 0.00000000e+00  4.92561212e-01  1.00000000e+00  6.41460677e-01  3.10354450e-01  1.52099287e-06 -3.10355266e-01 -6.41457315e-01 -1.00000000e+00 -4.92557557e-01  0.00000000e+00]</span>
+<span class="go">  [ 0.00000000e+00  4.92563136e-01  1.00000000e+00  6.41461553e-01  3.10355031e-01  3.98493823e-07 -3.10355102e-01 -6.41460292e-01 -1.00000000e+00 -4.92560068e-01  0.00000000e+00]</span>
+<span class="go">  [ 0.00000000e+00  4.77682608e-01  1.00000000e+00  6.14024658e-01  2.89606329e-01  2.47307453e-06 -2.89603028e-01 -6.14023807e-01 -1.00000000e+00 -4.77680087e-01  0.00000000e+00]</span>
+<span class="go">  [ 0.00000000e+00  4.18167581e-01  1.00000000e+00  5.25039348e-01  2.34044672e-01  5.26638008e-06 -2.34039885e-01 -5.25034828e-01 -1.00000000e+00 -4.18164196e-01  0.00000000e+00]</span>
+<span class="go">  [ 0.00000000e+00  1.94982205e-01  3.61767506e-01  2.52082957e-01  1.21534324e-01  3.15599565e-06 -1.21528280e-01 -2.52083071e-01 -3.61768031e-01 -1.94982326e-01  0.00000000e+00]</span>
+<span class="go">  [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00]]</span>
+</code></pre></div>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>phi</code></td>
+            <td>
+                  <code>Numpy array</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Primer argumento, la grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10<em>factor, 10</em>factor+1) para modelar el capacitor.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>omega</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Segundo argumento, parámetro que depende del problema, dependiendo de su escogencia puede acelerar el cálculo.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>factor</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Tercer argumento, es el factor de escala para obtener una grilla más detallada. Tiene que ser un entero.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>tol</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Cuarto argumento, es la tolerancia aceptada para la precisión del problema, se obtiene obteniendo la diferencia máxima entre phi y phi_copy</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>phi</code></td>            <td>
+                  <code>Numpy array</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>La grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10<em>factor, 10</em>factor+1) para modelar el capacitor.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+<td><code>its</code></td>            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Iteraciones que fueron necesarias para llegar a la tolerancia especificada.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src/serial_py/Capacitor.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">gauss_seidel</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">tol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Esta es la función que resuelve la ecuación diferencial parcial de Laplace de manera iterativa. En este caso la solución se guarda y se trabaja sobre la misma matriz, lo que es la principal diferencia de los métodos de Jacobi (modificado y simple). Una propiedad que es sumamente importante, es que siempre es estable.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; factor = 1</span>
+<span class="sd">        &gt;&gt;&gt; V1 = 1.0</span>
+<span class="sd">        &gt;&gt;&gt; V2 = -1.0</span>
+<span class="sd">        &gt;&gt;&gt; omega = 0.9</span>
+<span class="sd">        &gt;&gt;&gt; tol = 1e-5</span>
+
+<span class="sd">        &gt;&gt;&gt; result, iterations = gauss_seidel( 1, 0.9, 1, 1e-5)</span>
+<span class="sd">        &gt;&gt;&gt; print(result)</span>
+<span class="sd">         [[ 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00]</span>
+<span class="sd">          [ 0.00000000e+00  1.94984598e-01  3.61769011e-01  2.52087439e-01 1.21533562e-01 -1.41308295e-06 -1.21531760e-01 -2.52085676e-01 -3.61767842e-01 -1.94984609e-01  0.00000000e+00]</span>
+<span class="sd">          [ 0.00000000e+00  4.18168790e-01  1.00000000e+00  5.25040044e-01  2.34042744e-01  1.03625792e-06 -2.34042966e-01 -5.25038493e-01 -1.00000000e+00 -4.18167388e-01  0.00000000e+00]</span>
+<span class="sd">          [ 0.00000000e+00  4.77685703e-01  1.00000000e+00  6.14026208e-01  2.89605985e-01 -5.83595094e-08 -2.89606016e-01 -6.14026132e-01 -1.00000000e+00 -4.77681031e-01  0.00000000e+00]</span>
+<span class="sd">          [ 0.00000000e+00  4.92561212e-01  1.00000000e+00  6.41460677e-01  3.10354450e-01  1.52099287e-06 -3.10355266e-01 -6.41457315e-01 -1.00000000e+00 -4.92557557e-01  0.00000000e+00]</span>
+<span class="sd">          [ 0.00000000e+00  4.92563136e-01  1.00000000e+00  6.41461553e-01  3.10355031e-01  3.98493823e-07 -3.10355102e-01 -6.41460292e-01 -1.00000000e+00 -4.92560068e-01  0.00000000e+00]</span>
+<span class="sd">          [ 0.00000000e+00  4.77682608e-01  1.00000000e+00  6.14024658e-01  2.89606329e-01  2.47307453e-06 -2.89603028e-01 -6.14023807e-01 -1.00000000e+00 -4.77680087e-01  0.00000000e+00]</span>
+<span class="sd">          [ 0.00000000e+00  4.18167581e-01  1.00000000e+00  5.25039348e-01  2.34044672e-01  5.26638008e-06 -2.34039885e-01 -5.25034828e-01 -1.00000000e+00 -4.18164196e-01  0.00000000e+00]</span>
+<span class="sd">          [ 0.00000000e+00  1.94982205e-01  3.61767506e-01  2.52082957e-01  1.21534324e-01  3.15599565e-06 -1.21528280e-01 -2.52083071e-01 -3.61768031e-01 -1.94982326e-01  0.00000000e+00]</span>
+<span class="sd">          [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00]]</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        phi (Numpy array): Primer argumento, la grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10*factor, 10*factor+1) para modelar el capacitor.</span>
+<span class="sd">        omega (float): Segundo argumento, parámetro que depende del problema, dependiendo de su escogencia puede acelerar el cálculo.</span>
+<span class="sd">        factor (int): Tercer argumento, es el factor de escala para obtener una grilla más detallada. Tiene que ser un entero.</span>
+<span class="sd">        tol (float): Cuarto argumento, es la tolerancia aceptada para la precisión del problema, se obtiene obteniendo la diferencia máxima entre phi y phi_copy</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        phi (Numpy array): La grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10*factor, 10*factor+1) para modelar el capacitor.</span>
+<span class="sd">        its (int): Iteraciones que fueron necesarias para llegar a la tolerancia especificada.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Se asegura que factor sea un int</span>
+    <span class="n">factor</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span>
+    <span class="c1"># Se va a guardar una copia para evaluar el error</span>
+    <span class="n">phi_copy</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1"># Desarrollo del método Gauss-Seidel</span>
+    <span class="c1"># Se inicializa la variable que se usa para el condicional</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="c1"># Se inicializa el contador de iteraciones</span>
+    <span class="n">its</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># La escogencia de los parámetros de este for loop tienen un razonamiento. Se puede notar que la matriz especificada tiene tamaño (10*factor, 10*factor+1). Al empezar el for loop en 1 y terminarlo en el tamaño-1 (10*factor-1, 10*factor respectivamente) se evitan las condiciones de frontera que se encuentran en los límites de estas matrices, que serían la primer y última fila y columna, de esta forma se evita el uso de un condicional dentro del ciclo</span>
+    <span class="k">while</span> <span class="n">delta</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">factor</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">factor</span><span class="p">):</span>
+                <span class="c1"># Condicional que evita las condiciones de frontera</span>
+                <span class="k">if</span> <span class="mi">2</span><span class="o">*</span><span class="n">factor</span> <span class="o">&lt;=</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="o">*</span><span class="n">factor</span> <span class="ow">and</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">2</span><span class="o">*</span><span class="n">factor</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">8</span><span class="o">*</span><span class="n">factor</span><span class="p">):</span>
+                    <span class="k">pass</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># Para cualquier otro caso que no sean las condiciones de frontera, se evalua el algoritmo</span>
+                    <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="mf">1.0</span><span class="o">+</span><span class="n">omega</span><span class="p">)</span><span class="o">*</span><span class="mf">0.25</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">omega</span><span class="o">*</span><span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>
+        <span class="c1"># Se calcula la diferencia máxima con respecto a los valores que se obtuvieron en la iteración anterior</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">phi</span> <span class="o">-</span> <span class="n">phi_copy</span><span class="p">))</span>
+        <span class="c1"># Se copian los valores de la nueva iteración, para seguir aplicando el delta y mejorar la precisión</span>
+        <span class="n">phi_copy</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="c1"># Actualiza el contador de iteraciones</span>
+        <span class="n">its</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># En el momento que se cumple la condición en la que delta &lt;= tol, se rompe el ciclo y se devuelve la matriz con la solución phi y las iteraciones que fueron requeridas para llegar a la tolerancia mencionada</span>
+    <span class="c1"># Por naturaleza de python, se devuelve en forma de tupla</span>
+    <span class="k">return</span> <span class="n">phi</span><span class="p">,</span> <span class="n">its</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="src.serial_py.Capacitor.grid_generator" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">grid_generator</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">V1</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">V2</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">boundary</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Es la función que genera la grilla en la cual se va a trabajar para obtener la solución a la ecuación diferencial. El tamaño de la grilla va a ser de 10<em>factor filas y 10</em>factor+1 columnas. La grilla está hecha para manejar condiciones de Dirichlet. El propósito es modelar un capacitor, por eso se van a generar dos placas, una con voltaje V1 ubicada en x = 2 y la otra con voltaje V2 ubicada en x = 8. Asimismo, el borde del capacitor va a tener un voltaje en defecto igual a 0V. El problema trata con una región cuadrada de 10x10 cm, por lo tanto para obtener más precisión se usa el factor de escala ya mencionado.</p>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">V1</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">V2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">boundary</span> <span class="o">=</span> <span class="mf">0.0</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">grid_generator</span><span class="p">(</span><span class="n">factor</span><span class="p">,</span> <span class="n">V1</span><span class="p">,</span> <span class="n">V2</span><span class="p">,</span> <span class="n">boundary</span><span class="p">))</span>
+<span class="go"> [[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]</span>
+<span class="go">  [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]</span>
+<span class="go">  [ 0.  0.  1.  0.  0.  0.  0.  0. -1.  0.  0.]</span>
+<span class="go">  [ 0.  0.  1.  0.  0.  0.  0.  0. -1.  0.  0.]</span>
+<span class="go">  [ 0.  0.  1.  0.  0.  0.  0.  0. -1.  0.  0.]</span>
+<span class="go">  [ 0.  0.  1.  0.  0.  0.  0.  0. -1.  0.  0.]</span>
+<span class="go">  [ 0.  0.  1.  0.  0.  0.  0.  0. -1.  0.  0.]</span>
+<span class="go">  [ 0.  0.  1.  0.  0.  0.  0.  0. -1.  0.  0.]</span>
+<span class="go">  [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]</span>
+<span class="go">  [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]]</span>
+</code></pre></div>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>factor</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Primer argumento, es el factor de escala para obtener una grilla más detallada. Tiene que ser un entero</p>
+              </div>
+            </td>
+            <td>
+                  <code>1</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>V1</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Segundo argumento, es el voltaje que corresponde a la primera placa del capacitor.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1.0</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>V2</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Tercer argumento, es el voltaje que corresponde a la segunda placa del capacitor.</p>
+              </div>
+            </td>
+            <td>
+                  <code>-1.0</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>boundary</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Cuarto argumento, es el voltaje que corresponde a la frontera que delimita el capacitor</p>
+              </div>
+            </td>
+            <td>
+                  <code>0.0</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p>Returns:
+    phi (Numpy array): La grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10<em>factor, 10</em>factor+1) para modelar el capacitor. El +1 en las columnas es debido a que una grilla que tiene una cantidad M de divisiones, contiene M+1 puntos.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/serial_py/Capacitor.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">grid_generator</span><span class="p">(</span><span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">V1</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">V2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">boundary</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Es la función que genera la grilla en la cual se va a trabajar para obtener la solución a la ecuación diferencial. El tamaño de la grilla va a ser de 10*factor filas y 10*factor+1 columnas. La grilla está hecha para manejar condiciones de Dirichlet. El propósito es modelar un capacitor, por eso se van a generar dos placas, una con voltaje V1 ubicada en x = 2 y la otra con voltaje V2 ubicada en x = 8. Asimismo, el borde del capacitor va a tener un voltaje en defecto igual a 0V. El problema trata con una región cuadrada de 10x10 cm, por lo tanto para obtener más precisión se usa el factor de escala ya mencionado.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; factor = 1</span>
+<span class="sd">        &gt;&gt;&gt; V1 = 1.0</span>
+<span class="sd">        &gt;&gt;&gt; V2 = -1.0</span>
+<span class="sd">        &gt;&gt;&gt; boundary = 0.0</span>
+
+<span class="sd">        &gt;&gt;&gt; print(grid_generator(factor, V1, V2, boundary))</span>
+<span class="sd">         [[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]</span>
+<span class="sd">          [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]</span>
+<span class="sd">          [ 0.  0.  1.  0.  0.  0.  0.  0. -1.  0.  0.]</span>
+<span class="sd">          [ 0.  0.  1.  0.  0.  0.  0.  0. -1.  0.  0.]</span>
+<span class="sd">          [ 0.  0.  1.  0.  0.  0.  0.  0. -1.  0.  0.]</span>
+<span class="sd">          [ 0.  0.  1.  0.  0.  0.  0.  0. -1.  0.  0.]</span>
+<span class="sd">          [ 0.  0.  1.  0.  0.  0.  0.  0. -1.  0.  0.]</span>
+<span class="sd">          [ 0.  0.  1.  0.  0.  0.  0.  0. -1.  0.  0.]</span>
+<span class="sd">          [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]</span>
+<span class="sd">          [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]]</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        factor (int): Primer argumento, es el factor de escala para obtener una grilla más detallada. Tiene que ser un entero</span>
+<span class="sd">        V1 (float): Segundo argumento, es el voltaje que corresponde a la primera placa del capacitor.</span>
+<span class="sd">        V2 (float): Tercer argumento, es el voltaje que corresponde a la segunda placa del capacitor.</span>
+<span class="sd">        boundary (float): Cuarto argumento, es el voltaje que corresponde a la frontera que delimita el capacitor</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        phi (Numpy array): La grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10*factor, 10*factor+1) para modelar el capacitor. El +1 en las columnas es debido a que una grilla que tiene una cantidad M de divisiones, contiene M+1 puntos.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Crea el numpy array lleno de ceros para empezar a trabajar el problema.</span>
+    <span class="c1"># Se debe agregar el &quot;dtype = float&quot; para guardar los espacios con números flotantes desde un principio.</span>
+    <span class="c1"># factor tiene que ser un int, o si no va a tirar error</span>
+    <span class="n">factor</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="o">*</span><span class="n">factor</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">factor</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
+    <span class="c1"># Se incluyen las condiciones de frontera, como se escala con el factor, mantiene las dimensiones del problema original pero se tiene que multiplicar por este mismo. Se hace uso de &quot;list slicing&quot; para evitar el uso de for loops. Se hace desde 2*factor hasta 8*factor para no afectar las condiciones de frontera, pero aún así incluir los 6*factor puntos correspondientes a la grilla. Se aplica en las columnas correspondientes a 2*factor y 8*factor.</span>
+    <span class="n">phi</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">factor</span><span class="p">:</span><span class="mi">8</span><span class="o">*</span><span class="n">factor</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">factor</span><span class="p">]</span> <span class="o">=</span> <span class="n">V1</span>
+    <span class="n">phi</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">factor</span><span class="p">:</span><span class="mi">8</span><span class="o">*</span><span class="n">factor</span><span class="p">,</span> <span class="mi">8</span><span class="o">*</span><span class="n">factor</span><span class="p">]</span> <span class="o">=</span> <span class="n">V2</span>
+    <span class="c1"># Se devuelve la matriz ya construida</span>
+    <span class="k">return</span> <span class="n">phi</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="src.serial_py.Capacitor.jacobi_relaxation" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">jacobi_relaxation</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">tol</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Esta es la función que resuelve la ecuación diferencial parcial de Laplace de manera iterativa. El método de relajación de Jacobi es la base para los métodos que se van a utilizar en este proyecto. Usa una discretización de la ecuación diferencial parcial para iterar por la grilla sucesivamente y definir el valor de un punto en específico con base en los puntos que se encuentran alrededor. Una particularidad de los métodos de Jacobi es que calcula los valores y los guarda en una matriz diferente a la que se obtienen estos valores. Este método no siempre es estable.</p>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">V1</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">V2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">phi</span> <span class="o">=</span> <span class="n">grid_generator</span><span class="p">(</span><span class="n">factor</span><span class="p">,</span> <span class="n">V1</span><span class="p">,</span> <span class="n">V2</span><span class="p">,</span> <span class="n">boundary</span><span class="p">)</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="n">jacobi_relaxation</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">tol</span> <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">     [[ 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00]</span>
+<span class="go">      [ 0.00000000e+00  1.94982708e-01  3.61765902e-01  2.52080212e-01 1.21529913e-01 -2.84369944e-06 -1.21529913e-01 -2.52083357e-01  3.61765902e-01 -1.94983009e-01  0.00000000e+00]</span>
+<span class="go">      [ 0.00000000e+00  4.18166080e-01  1.00000000e+00  5.25034691e-01 2.34035713e-01  0.00000000e+00 -2.34044624e-01 -5.25034691e-01 -1.00000000e+00 -4.18166080e-01  0.00000000e+00]</span>
+<span class="go">      [ 0.00000000e+00  4.77681614e-01  1.00000000e+00  6.14017698e-01 2.89601333e-01 -6.52821638e-06 -2.89601333e-01 -6.14024255e-01 -1.00000000e+00 -4.77681644e-01  0.00000000e+00]</span>
+<span class="go">      [ 0.00000000e+00  4.92560530e-01  1.00000000e+00  6.41454747e-01 3.10343548e-01 -1.38777878e-17 -3.10355574e-01 -6.41454747e-01 -1.00000000e+00 -4.92560530e-01  0.00000000e+00]</span>
+<span class="go">      [ 0.00000000e+00  4.92560525e-01  1.00000000e+00  6.41451305e-01 3.10349780e-01 -6.45366768e-06 -3.10349780e-01 -6.41457765e-01 -1.00000000e+00 -4.92560532e-01  0.00000000e+00]</span>
+<span class="go">      [ 0.00000000e+00  4.77681632e-01  1.00000000e+00  6.14021179e-01 2.89596565e-01  0.00000000e+00 -2.89605737e-01 -6.14021179e-01 -1.00000000e+00 -4.77681632e-01  0.00000000e+00]</span>
+<span class="go">      [ 0.00000000e+00  4.18166049e-01  1.00000000e+00  5.25032673e-01 2.34040327e-01 -3.70966838e-06 -2.34040327e-01 -5.25036434e-01 -1.00000000e+00 -4.18166101e-01  0.00000000e+00]</span>
+<span class="go">      [ 0.00000000e+00  1.94982876e-01  3.61765564e-01  2.52081888e-01 1.21528167e-01 -3.46944695e-18 -1.21531509e-01 -2.52081888e-01 -3.61766174e-01 -1.94982876e-01  0.00000000e+00]</span>
+<span class="go">      [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00]]</span>
+</code></pre></div>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>phi</code></td>
+            <td>
+                  <code>Numpy array</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Primer argumento, la grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10<em>factor, 10</em>factor+1) para modelar el capacitor.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>factor</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Segundo argumento, es el factor de escala para obtener una grilla más detallada. Tiene que ser un entero.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>tol</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Tercer argumento, es la tolerancia aceptada para la precisión del problema, se obtiene obteniendo la diferencia máxima entre phi y phi_copy</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>phi</code></td>            <td>
+                  <code>Numpy array</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>La grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10<em>factor, 10</em>factor+1) para modelar el capacitor.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+<td><code>its</code></td>            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Iteraciones que fueron necesarias para llegar a la tolerancia especificada.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src/serial_py/Capacitor.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">jacobi_relaxation</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">tol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Esta es la función que resuelve la ecuación diferencial parcial de Laplace de manera iterativa. El método de relajación de Jacobi es la base para los métodos que se van a utilizar en este proyecto. Usa una discretización de la ecuación diferencial parcial para iterar por la grilla sucesivamente y definir el valor de un punto en específico con base en los puntos que se encuentran alrededor. Una particularidad de los métodos de Jacobi es que calcula los valores y los guarda en una matriz diferente a la que se obtienen estos valores. Este método no siempre es estable.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; factor = 1</span>
+<span class="sd">        &gt;&gt;&gt; V1 = 1.0</span>
+<span class="sd">        &gt;&gt;&gt; V2 = -1.0</span>
+<span class="sd">        &gt;&gt;&gt; tol = 1e-5</span>
+<span class="sd">        &gt;&gt;&gt; phi = grid_generator(factor, V1, V2, boundary)</span>
+
+<span class="sd">        &gt;&gt;&gt; result, iterations = jacobi_relaxation(phi, factor, tol )</span>
+<span class="sd">        &gt;&gt;&gt; print(result)</span>
+<span class="sd">             [[ 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00]</span>
+<span class="sd">              [ 0.00000000e+00  1.94982708e-01  3.61765902e-01  2.52080212e-01 1.21529913e-01 -2.84369944e-06 -1.21529913e-01 -2.52083357e-01  3.61765902e-01 -1.94983009e-01  0.00000000e+00]</span>
+<span class="sd">              [ 0.00000000e+00  4.18166080e-01  1.00000000e+00  5.25034691e-01 2.34035713e-01  0.00000000e+00 -2.34044624e-01 -5.25034691e-01 -1.00000000e+00 -4.18166080e-01  0.00000000e+00]</span>
+<span class="sd">              [ 0.00000000e+00  4.77681614e-01  1.00000000e+00  6.14017698e-01 2.89601333e-01 -6.52821638e-06 -2.89601333e-01 -6.14024255e-01 -1.00000000e+00 -4.77681644e-01  0.00000000e+00]</span>
+<span class="sd">              [ 0.00000000e+00  4.92560530e-01  1.00000000e+00  6.41454747e-01 3.10343548e-01 -1.38777878e-17 -3.10355574e-01 -6.41454747e-01 -1.00000000e+00 -4.92560530e-01  0.00000000e+00]</span>
+<span class="sd">              [ 0.00000000e+00  4.92560525e-01  1.00000000e+00  6.41451305e-01 3.10349780e-01 -6.45366768e-06 -3.10349780e-01 -6.41457765e-01 -1.00000000e+00 -4.92560532e-01  0.00000000e+00]</span>
+<span class="sd">              [ 0.00000000e+00  4.77681632e-01  1.00000000e+00  6.14021179e-01 2.89596565e-01  0.00000000e+00 -2.89605737e-01 -6.14021179e-01 -1.00000000e+00 -4.77681632e-01  0.00000000e+00]</span>
+<span class="sd">              [ 0.00000000e+00  4.18166049e-01  1.00000000e+00  5.25032673e-01 2.34040327e-01 -3.70966838e-06 -2.34040327e-01 -5.25036434e-01 -1.00000000e+00 -4.18166101e-01  0.00000000e+00]</span>
+<span class="sd">              [ 0.00000000e+00  1.94982876e-01  3.61765564e-01  2.52081888e-01 1.21528167e-01 -3.46944695e-18 -1.21531509e-01 -2.52081888e-01 -3.61766174e-01 -1.94982876e-01  0.00000000e+00]</span>
+<span class="sd">              [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00]]</span>
+
+
+<span class="sd">    Args:</span>
+<span class="sd">        phi (Numpy array): Primer argumento, la grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10*factor, 10*factor+1) para modelar el capacitor.</span>
+<span class="sd">        factor (int): Segundo argumento, es el factor de escala para obtener una grilla más detallada. Tiene que ser un entero.</span>
+<span class="sd">        tol (float): Tercer argumento, es la tolerancia aceptada para la precisión del problema, se obtiene obteniendo la diferencia máxima entre phi y phi_copy</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        phi (Numpy array): La grilla 10x10cm escalada por el factor para que sea un numpy array de tamaño (10*factor, 10*factor+1) para modelar el capacitor.</span>
+<span class="sd">        its (int): Iteraciones que fueron necesarias para llegar a la tolerancia especificada.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Se asegura que factor sea un int</span>
+    <span class="n">factor</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span>
+    <span class="c1"># Se crea la copia para guardar los valores que se van obteniendo, esta tiene que tener el mismo formato que phi</span>
+    <span class="n">phi_prime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="c1">#grid_generator(factor, V1, V2, boundary)</span>
+    <span class="c1"># Desarrollo del método Gauss-Seidel</span>
+    <span class="c1"># Se inicializa la variable que se usa para el condicional</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="c1"># Se inicializa el contador de iteraciones</span>
+    <span class="n">its</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># La escogencia de los parámetros de este for loop tienen un razonamiento. Se puede notar que la matriz especificada tiene tamaño (10*factor, 10*factor+1). Al empezar el for loop en 1 y terminarlo en el tamaño-1 (10*factor-1, 10*factor respectivamente) se evitan las condiciones de frontera que se encuentran en los límites de estas matrices, que serían la primer y última fila y columna, de esta forma se evita el uso de un condicional dentro del ciclo</span>
+    <span class="k">while</span> <span class="n">delta</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">factor</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">factor</span><span class="p">):</span>
+                <span class="c1"># Condicional que evita las condiciones de frontera</span>
+                <span class="k">if</span> <span class="mi">2</span><span class="o">*</span><span class="n">factor</span> <span class="o">&lt;=</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="o">*</span><span class="n">factor</span> <span class="ow">and</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">2</span><span class="o">*</span><span class="n">factor</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">8</span><span class="o">*</span><span class="n">factor</span><span class="p">):</span>
+                    <span class="k">pass</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># Para cualquier otro caso que no sean las condiciones de frontera, se evalua el algoritmo</span>
+                    <span class="n">phi_prime</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.25</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="c1"># Se calcula la diferencia máxima con respecto a los valores que se obtuvieron en la iteración anterior</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">phi</span> <span class="o">-</span> <span class="n">phi_prime</span><span class="p">))</span>
+        <span class="c1"># Se intercambian ambas grillas para que se siga aplicando el método, para seguir aplicando el delta y mejorar la precisión</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">phi</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">phi_prime</span>
+        <span class="c1"># El nuevo phi_prime es el phi viejo</span>
+        <span class="n">phi_prime</span> <span class="o">=</span> <span class="n">temp</span>
+        <span class="c1"># Actualiza el contador de iteraciones</span>
+        <span class="n">its</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># En el momento que se cumple la condición en la que delta &lt;= tol, se rompe el ciclo y se devuelve la matriz con la solución phi (en este caso sería la matriz phi_prime) y las iteraciones que fueron requeridas para llegar a la tolerancia mencionada</span>
+    <span class="c1"># Por naturaleza de python, se devuelve en forma de tupla</span>
+    <span class="k">return</span> <span class="n">phi_prime</span><span class="p">,</span> <span class="n">its</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
