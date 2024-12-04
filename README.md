@@ -35,9 +35,9 @@ Computacionalmente, se crea una nueva copia de la grilla para guardar los difere
 
 ## Sobre-relajación de Jacobi (overrelaxation)
 Este método es una forma sencilla de optimizar el método de relajación de Jacobi. En el cual se hará uso de un parámetro $\omega$ para lograr una convergencia acelerada, la ecuación para calcular cada uno de los puntos de la grilla es la siguiente.
-\begin{equation}
+$$
 \phi_{prime} = (1+\omega)(\phi (x +a, y) + \phi (x -a,y) + \phi (x,y + a) + \phi (x,y - a)) - \omega \phi (x,y)
-\end{equation}
+$$
 ### Error en Sobre-relajación de Jacobi
 Como se sabe, a nivel matemático se intenta resolver un sistema de ecuaciones de forma $Ax=b$ en los que, con cada iteración, se conseguirá un vector solución aproximado $\bar{x}$. De esta manera el vector residual definido como $r = A\bar{x} - b$ debería ir acercandose a 0. A nivel numérico esto no siempre se cumple si la matriz a resolver está mal condicionada.
 Para saber si una matriz esta malc condicionada se debe analizar el número de condición el cual se define de la siguiente manera.
