@@ -28,7 +28,7 @@ Para la resolución del problema en cuestión se estarán utilizando mayormente 
 ## Relajación de Jacobi 
 El método de relajación de Jacobi consiste ne el uso de diferencias centrales para discretizar la ecuación diferencial inicial. Esto da como resultado que cada unos de los puntos de la grilla toma los puntos próximos para calcularse, tal como se puede ver en la siguiente ecuación.
 \begin{equation}
-\phi (x,y) = \frac{1}{4} \cdot \phi (x +a, y) + \phi (x -a,y) + \phi (x,y + a) + \phi (x,y - a)
+ \phi (x,y) = \frac{1}{4} \cdot \phi (x +a, y) + \phi (x -a,y) + \phi (x,y + a) + \phi (x,y - a)
 \end{equation}
 En el cual, $\phi (x, y)$ representa cada uno de los puntos de la grilla por los que se iterará
 Computacionalmente, se crea una nueva copia de la grilla para guardar los diferentes valores que se calcularán en la implementación del método si guiendo la ecuaci'on anteriormente mostrada.
