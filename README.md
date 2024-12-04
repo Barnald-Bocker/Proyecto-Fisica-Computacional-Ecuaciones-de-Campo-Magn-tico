@@ -27,23 +27,23 @@ Para la resolución del problema en cuestión se estarán utilizando mayormente 
 
 ## Relajación de Jacobi 
 El método de relajación de Jacobi consiste ne el uso de diferencias centrales para discretizar la ecuación diferencial inicial. Esto da como resultado que cada unos de los puntos de la grilla toma los puntos próximos para calcularse, tal como se puede ver en la siguiente ecuación.
-\begin{equation}
- \phi (x,y) = \frac{1}{4} \cdot \phi (x +a, y) + \phi (x -a,y) + \phi (x,y + a) + \phi (x,y - a)
-\end{equation}
+
+ $\phi (x,y) = \frac{1}{4} \cdot \phi (x +a, y) + \phi (x -a,y) + \phi (x,y + a) + \phi (x,y - a)$
+
 En el cual, $\phi (x, y)$ representa cada uno de los puntos de la grilla por los que se iterará
 Computacionalmente, se crea una nueva copia de la grilla para guardar los diferentes valores que se calcularán en la implementación del método si guiendo la ecuaci'on anteriormente mostrada.
 
 ## Sobre-relajación de Jacobi (overrelaxation)
 Este método es una forma sencilla de optimizar el método de relajación de Jacobi. En el cual se hará uso de un parámetro $\omega$ para lograr una convergencia acelerada, la ecuación para calcular cada uno de los puntos de la grilla es la siguiente.
-$$
-\phi_{prime} = (1+\omega)(\phi (x +a, y) + \phi (x -a,y) + \phi (x,y + a) + \phi (x,y - a)) - \omega \phi (x,y)
-$$
+
+$\phi_{prime} = (1+\omega)(\phi (x +a, y) + \phi (x -a,y) + \phi (x,y + a) + \phi (x,y - a)) - \omega \phi (x,y)$
+
 ### Error en Sobre-relajación de Jacobi
 Como se sabe, a nivel matemático se intenta resolver un sistema de ecuaciones de forma $Ax=b$ en los que, con cada iteración, se conseguirá un vector solución aproximado $\bar{x}$. De esta manera el vector residual definido como $r = A\bar{x} - b$ debería ir acercandose a 0. A nivel numérico esto no siempre se cumple si la matriz a resolver está mal condicionada.
 Para saber si una matriz esta malc condicionada se debe analizar el número de condición el cual se define de la siguiente manera.
-\begin{equation}
-\kappa (A) = ||A|| \cdot ||A^{T}||
-\end{equation}
+
+$\kappa (A) = ||A|| \cdot ||A^{T}||$
+\
 En que ||A|| se conoce como la norma espectral y corresponde a el mayor valor singular de la matriz $AA^{T}$. Para el caso de la matriz de este problema, esta misma es simétrica, por lo que el mayor valor singular corresponde a el mayor autovalor de la matriz.
 El número de condición es un nos da información de la seguridad que tiene una matriz de estar bien condicionada, si este número es cercano a 1 la matriz esta bien condicionada, por lo que no habría problemas. Si este numero es mayor a 1 existe la posibilidad de que sea una matriz mal condicionada y que por lo tanto sea sensible a errores numéricos, lo que hace el método inestable.
 ### Nota importante
