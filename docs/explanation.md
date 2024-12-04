@@ -1,6 +1,6 @@
-#Metodos numericos usados en el proyecto 
+#Métodos numéricos usados en el proyecto 
 
-##Metodo de relajacion de jacobi 
+##Método de relajación de Jacobi 
 
 Este es un método que utiliza diferencias finitas para definir las derivadas del siguiente problema el cual corresponde a la ley de Gauss en dos dimensiones:
 
@@ -31,18 +31,18 @@ De esta manera se consigue una nueva forma de la ley de Gauss.
 \begin{equation}
  \phi (x,y) = \frac{1}{4} \cdot \phi (x +a, y) + \phi (x -a,y) + \phi (x,y + a) + \phi (x,y - a)
 \end{equation}
-Como se puede observar, cada punto $\phi(x,y)$ se calcula al usar los valores proximos a dicho punto.
+Como se puede observar, cada punto $\phi(x,y)$ se calcula al usar los valores próximos a dicho punto.
 De esta manera se encuentran una serie de ecuaciones que corresponden a un sistema de ecuaciones a resolver. De este mismo sistema se puede extraer una matriz, a este arreglo se le va a nombrar la matriz A con entradas $a_{ij}$ dentro de esta matriz recae la condicion de convergencia de este método la conforman los criterios de la diagonal dominante, los cuales son los siguiente
 
-condicion necesaria: $|a_{ii}| > |a_{ij}|$
+condición necesaria: $|a_{ii}| > |a_{ij}|$
 
--condicion suficiente: $|a_{ii}| > \sum|a_{ij}|$
+-condición suficiente: $|a_{ii}| > \sum|a_{ij}|$
 
-La condicion necesaria se debe cumplir obligatoriamente para todos los elementos de la diagonal de la matriz.
+La condición necesaria se debe cumplir obligatoriamente para todos los elementos de la diagonal de la matriz.
 La condición suficiente, una vez cumplida, se puede asegurar que se llegara a la convergencia. Puede haber casos que no cumplan esta condicion y aun asi se puede dar la convergencia
-Es importante aclarar que este método solo proporciona una aproximación a la solución, esta aproximación puede precisa dependiendo del valor de tolerancia que se logre alcanzar.
+Es importante aclarar que este método solo proporciona una aproximación a la solución, esta aproximación puede ser precisa dependiendo del valor de tolerancia que se logre alcanzar.
 ##Metodo de Jacobi modificado(overrelaxation)
-El metodo de sobrerelajación de Jacobi forma parte de los metodos de relajación acelerada en el cual se logra acelerar la convergencia gracias a un parámetro $\omega$, dando lugar a una nueva forma de definir $\phi_{prime}$ la cual es la siguiente:
+El metodo de sobrerelajación de Jacobi forma parte de los métodos de relajación acelerada en el cual se logra acelerar la convergencia gracias a un parámetro $\omega$, dando lugar a una nueva forma de definir $\phi_{prime}$ la cual es la siguiente:
 \begin{equation}
  \phi_{prime} = (1+\omega)(\phi (x +a, y) + \phi (x -a,y) + \phi (x,y + a) + \phi (x,y - a)) - \omega \phi (x,y)
 \end{equation}
