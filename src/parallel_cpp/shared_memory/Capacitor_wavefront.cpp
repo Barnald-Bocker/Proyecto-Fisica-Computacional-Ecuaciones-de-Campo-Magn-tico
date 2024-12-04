@@ -132,6 +132,7 @@ int gauss_seidel(std::vector<double>& phi, double omega, int factor, double tole
 	double time_2 = seconds();
 	std::cout << "Número de procesos: " << num_procs << std::endl;
 	std::cout << "Tiempo transcurrido: " << time_2 - time_1 << std::endl;
+	std::cout << "Diferencia máxima: " << maxDelta << std::endl;
 	return its;
 }
 
